@@ -1,0 +1,45 @@
+<!-- templates/index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Gravitational Wave Generator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <h1>Gravitational Wave Generator</h1>
+    <div class="controls">
+        <form id="params-form">
+            <div class="param-group">
+                <label for="mass1">Mass 1 (M<sub>☉</sub>):</label>
+                <input type="number" id="mass1" name="mass1" min="1" max="100" step="0.1" value="30.0">
+            </div>
+            <div class="param-group">
+                <label for="mass2">Mass 2 (M<sub>☉</sub>):</label>
+                <input type="number" id="mass2" name="mass2" min="1" max="100" step="0.1" value="30.0">
+            </div>
+            <div class="param-group">
+                <label for="spin1z">Spin 1:</label>
+                <input type="number" id="spin1z" name="spin1z" min="-1" max="1" step="0.1" value="0.0">
+            </div>
+            <div class="param-group">
+                <label for="spin2z">Spin 2:</label>
+                <input type="number" id="spin2z" name="spin2z" min="-1" max="1" step="0.1" value="0.0">
+            </div>
+            <div class="param-group">
+                <label for="speed_factor">Speed Factor:</label>
+                <input type="number" id="speed_factor" name="speed_factor" min="0.1" max="10" step="0.1" value="1.0">
+            </div>
+            <button type="submit">Generate Waveform</button>
+        </form>
+    </div>
+    <div class="output">
+        <h2>Waveform and Spectrogram</h2>
+        <img id="waveform-image" src="" alt="Waveform will appear here">
+        <h2>Audio Playback</h2>
+        <audio id="waveform-audio" controls src=""></audio>
+    </div>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
