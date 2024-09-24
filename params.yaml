@@ -1,0 +1,62 @@
+# params.yaml
+
+# List of parameter sets for gravitational waveform generation.
+# Each item in the list represents a different test case.
+
+- label: Equal_Mass_No_Spin
+  # Two black holes with equal masses and no spins
+  mass1: 30.0          # Mass of the first black hole (solar masses)
+  mass2: 30.0          # Mass of the second black hole (solar masses)
+  spin1z: 0.0          # Spin of the first black hole (-1 to 1)
+  spin2z: 0.0          # Spin of the second black hole (-1 to 1)
+  delta_t: 0.000244140625  # Time step between samples (seconds)
+  f_lower: 20.0        # Lower frequency cutoff (Hz)
+  speed_factor: 1.0    # Factor to speed up or slow down the waveform
+  sample_rate: 44100   # Target sample rate for audio (Hz)
+
+- label: Unequal_Mass_Opposite_Spins
+  # Black holes with unequal masses and opposite spins
+  mass1: 35.0
+  mass2: 25.0
+  spin1z: 0.5
+  spin2z: -0.5
+  # delta_t, f_lower, speed_factor, and sample_rate can be omitted to use default values
+
+- label: High_Spins_Unequal_Mass
+  # Black holes with high positive spins and unequal masses
+  mass1: 20.0
+  mass2: 10.0
+  spin1z: 0.9
+  spin2z: 0.9
+
+- label: High_Negative_Spins_Equal_Mass
+  # Two black holes with equal masses and high negative spins
+  mass1: 50.0
+  mass2: 50.0
+  spin1z: -0.9
+  spin2z: -0.9
+
+- label: Extreme_Mass_Ratio
+  # Black holes with an extreme mass ratio
+  mass1: 50.0
+  mass2: 2.0
+  spin1z: 0.0
+  spin2z: 0.0
+
+- label: Fast_Speed_Factor
+  # Waveform sped up by a factor of 2
+  mass1: 30.0
+  mass2: 30.0
+  spin1z: 0.0
+  spin2z: 0.0
+  speed_factor: 2.0
+
+- label: Slow_Speed_Factor
+  # Waveform slowed down by a factor of 0.5
+  mass1: 30.0
+  mass2: 30.0
+  spin1z: 0.0
+  spin2z: 0.0
+  speed_factor: 0.5
+
+# You can add more parameter sets as needed
