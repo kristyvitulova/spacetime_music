@@ -14,7 +14,7 @@ app.config['CACHE_TYPE'] = 'simple'
 cache = Cache(app)
 
 # Ensure output directories exist
-OUTPUT_DIR = 'static/output'
+OUTPUT_DIR = os.path.join(app.root_path, 'static', 'output')
 if not os.path.exists(OUTPUT_DIR):
     os.makedirs(OUTPUT_DIR)
 
@@ -27,7 +27,11 @@ def generate():
     data = request.get_json()
     mass1 = data.get('mass1', 30.0)
     mass2 = data.get('mass2', 30.0)
+    spin1x = data.get('spin1x', 0.0)
+    spin1y = data.get('spin1y', 0.0)
     spin1z = data.get('spin1z', 0.0)
+    spin2x = data.get('spin2x', 0.0)
+    spin2y = data.get('spin2y', 0.0)
     spin2z = data.get('spin2z', 0.0)
     speed_factor = data.get('speed_factor', 1.0)
     sample_rate = data.get('sample_rate', 44100)
@@ -35,7 +39,11 @@ def generate():
     params = {
         'mass1': mass1,
         'mass2': mass2,
+        'spin1x': spin1x,
+        'spin1y': spin1y,
         'spin1z': spin1z,
+        'spin2x': spin2x,
+        'spin2y': spin2y,
         'spin2z': spin2z,
         'speed_factor': speed_factor,
         'sample_rate': sample_rate
@@ -59,7 +67,11 @@ def generate():
         waveform, original_sample_rate = generate_gw_waveform(
             mass1=mass1,
             mass2=mass2,
+            spin1x=spin1x,
+            spin1y=spin1y,
             spin1z=spin1z,
+            spin2x=spin2x,
+            spin2y=spin2y,
             spin2z=spin2z
         )
         waveform = frequency_shift(waveform, speed_factor)
