@@ -11,7 +11,6 @@
   spin2z: 0.0          # Spin of the second black hole (-1 to 1)
   delta_t: 0.000244140625  # Time step between samples (seconds)
   f_lower: 20.0        # Lower frequency cutoff (Hz)
-  speed_factor: 1.0    # Factor to speed up or slow down the waveform
   sample_rate: 44100   # Target sample rate for audio (Hz)
 
 - label: Unequal_Mass_Opposite_Spins
@@ -20,7 +19,7 @@
   mass2: 25.0
   spin1z: 0.5
   spin2z: -0.5
-  # delta_t, f_lower, speed_factor, and sample_rate can be omitted to use default values
+  # delta_t, f_lower, and sample_rate can be omitted to use default values
 
 - label: High_Spins_Unequal_Mass
   # Black holes with high positive spins and unequal masses
@@ -42,21 +41,5 @@
   mass2: 2.0
   spin1z: 0.0
   spin2z: 0.0
-
-- label: Fast_Speed_Factor
-  # Waveform sped up by a factor of 2
-  mass1: 30.0
-  mass2: 30.0
-  spin1z: 0.0
-  spin2z: 0.0
-  speed_factor: 2.0
-
-- label: Slow_Speed_Factor
-  # Waveform slowed down by a factor of 0.5
-  mass1: 30.0
-  mass2: 30.0
-  spin1z: 0.0
-  spin2z: 0.0
-  speed_factor: 0.5
 
 # You can add more parameter sets as needed

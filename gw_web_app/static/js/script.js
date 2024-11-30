@@ -11,7 +11,6 @@ document.getElementById('params-form').addEventListener('submit', function(e) {
     const spin2x = parseFloat(document.getElementById('spin2x').value);
     const spin2y = parseFloat(document.getElementById('spin2y').value);
     const spin2z = parseFloat(document.getElementById('spin2z').value);
-    const speed_factor = parseFloat(document.getElementById('speed_factor').value);
 
     const data = {
         mass1: mass1,
@@ -22,7 +21,6 @@ document.getElementById('params-form').addEventListener('submit', function(e) {
         spin2x: spin2x,
         spin2y: spin2y,
         spin2z: spin2z,
-        speed_factor: speed_factor
     };
 
     fetch('/generate', {
